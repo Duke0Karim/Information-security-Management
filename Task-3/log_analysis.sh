@@ -1,6 +1,10 @@
 #!/bin/bash
 
 LOG_FILE="apache_logs"
+OUTPUT_FILE="apache_log_analysis_report.txt"
+
+# Redirect all output to the file and also display on terminal
+exec > >(tee -a "$OUTPUT_FILE") 2>&1
 
 echo "=== Apache Log Analysis ==="
 
